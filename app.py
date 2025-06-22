@@ -111,14 +111,19 @@ if st.button("🔍 Genera Costi e PDF"):
     prezzo_med = costo_unitario * 1.40
     prezzo_max = costo_unitario * 1.60
 
+    perc_min = ((prezzo_min - costo_unitario) / costo_unitario) * 100 if costo_unitario > 0 else 0
+    perc_med = ((prezzo_med - costo_unitario) / costo_unitario) * 100 if costo_unitario > 0 else 0
+    perc_max = ((prezzo_max - costo_unitario) / costo_unitario) * 100 if costo_unitario > 0 else 0
+
+
     margine_valore = prezzo_vendita - costo_unitario
     margine_percento = (margine_valore / costo_unitario) * 100 if costo_unitario > 0 else 0
 
     # ---- Mostra risultati
     st.success(f"Costo unitario: {costo_unitario:.4f} Euro")
-    st.info(f"Prezzo minimo suggerito: {prezzo_min:.4f} Euro")
-    st.info(f"Prezzo medio suggerito: {prezzo_med:.4f} Euro")
-    st.info(f"Prezzo massimo suggerito: {prezzo_max:.4f} Euro")
+    st.info(f"Prezzo minimo suggerito: {prezzo_min:.4f} Euro ({perc_min:.2f}%)")
+    st.info(f"Prezzo medio suggerito: {prezzo_med:.4f} Euro ({perc_med:.2f}%)")
+    st.info(f"Prezzo massimo suggerito: {prezzo_max:.4f} Euro ({perc_max:.2f}%)")
     st.warning(f"Margine sul prezzo di vendita: {margine_valore:.4f} Euro ({margine_percento:.2f}%)")
 
     # ---- PDF
