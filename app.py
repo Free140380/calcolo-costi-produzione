@@ -3,7 +3,7 @@ from fpdf import FPDF
 import os
 
 # Aggiungi il font DejaVu
-FONT_PATH = os.path.join("fonts", "DejaVuSans.ttf)  # Assicurati che sia nella stessa cartella
+FONT_PATH = os.path.join("fonts", "DejaVuSans.ttf")  # Assicurati che sia nella stessa cartella
 
 class PDF(FPDF):
     def header(self):
