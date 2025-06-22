@@ -25,7 +25,7 @@ def crea_pdf(nome_pezzo, dettagli, risultati):
     pdf.ln(5)
 
     for descrizione, valore in dettagli.items():
-        pdf.multi_cell(0, 10, f"{descrizione}: {valore}", ln=True)
+        pdf.multi_cell(0, 10, f"{descrizione}: {valore}")
 
     pdf.ln(5)
     pdf.cell(0, 10, f"Costo unitario: {risultati['costo_unitario']:.4f} Euro", ln=True)
