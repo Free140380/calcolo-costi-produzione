@@ -83,10 +83,13 @@ if st.button("🔍 Genera Costi e PDF"):
     else:
         costo_operatore = 22 * tempo_attrezzaggio
         costo_ammortamento = 0
-
+        
+    frequenza controllo = 8  # ogni 8 ore
+    durata_controllo = 1     # ogni controllo dura 1 ora 
+    
     costo_tempi = sum(t[0] * t[1] for t in tempi.values())
     costo_aggiuntivo = sum(costi_aggiuntivi.values())
-    controllo_macchina = (8 / 2) * 22 if quantita else 0
+    controllo_macchina = (tempo_macchina / frequenza_controllo) * durata_controllo * 22 if quantita else 0
     trasporto = 40 * 0.5  # es. 0.5 Euro/km medio con Doblò elettrico
     energia = 0.02 * quantita  # es. 0.02 Euro a pezzo
 
