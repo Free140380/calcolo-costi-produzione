@@ -90,7 +90,7 @@ if st.button("🔍 Genera Costi e PDF"):
     costo_tempi = sum(t[0] * t[1] for t in tempi.values())
     costo_aggiuntivo = sum(costi_aggiuntivi.values())
     controllo_macchina = (tempo_macchina / frequenza_controllo) * durata_controllo * 22 if quantita else 0
-    trasporto = 40 * 0.5  # es. 0.5 Euro/km medio con Doblò elettrico
+    trasporto = (40 * 0.5) / 4  # es. 0.5 Euro/km medio con Doblò elettrico diviso 4 consegne giornaliere
     energia = 0.02 * quantita  # es. 0.02 Euro a pezzo
 
     costo_totale = (
