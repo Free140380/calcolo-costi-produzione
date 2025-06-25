@@ -84,7 +84,7 @@ if st.button("🔍 Genera Costi e PDF"):
         costo_operatore = 22 * tempo_attrezzaggio
         costo_ammortamento = 0
         
-    frequenza controllo = 8  # ogni 8 ore
+    frequenza_controllo = 8  # ogni 8 ore
     durata_controllo = 1     # ogni controllo dura 1 ora 
     
     costo_tempi = sum(t[0] * t[1] for t in tempi.values())
